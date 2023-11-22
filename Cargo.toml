@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "heliox_asm",
+    "heliox_lang",
+    "heliox"
+]
