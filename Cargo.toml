@@ -4,3 +4,4 @@ members = [
     "heliox_lang",
     "heliox"
 ]
+resolver = "2"

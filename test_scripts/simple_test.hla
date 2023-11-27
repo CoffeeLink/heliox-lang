@@ -1,0 +1,32 @@
+// stuff
+
+.entry main // tells the compiler that the code should start at "main"
+.feature stack // only compiles to targets with stack
+
+// constants
+
+const crab 10
+const mem r5
+
+const IO_1 r9
+
+// literal types
+
+const a_register r6 // ints that start with a r[num] are registers, they just tell the compiler that that should be treated as a register.
+const an_int 32
+const int_example -10 // having "+" or "-" at the start also works
+const bin_int 0b0000_00000 // start with "0b" or "b" to use binary
+const hex_int 0xFF // start with "0x" to use hex, targets define their limits
+
+// labels only give a point to the ins so "main" is the addr of sta( ... )
+label main
+    mov 10 r2
+    psh r2
+    psh 101
+
+label loop
+    add 1 r1 r1
+    mov r1 IO_1
+    jmp loop
+
+
