@@ -32,9 +32,10 @@ pub struct Lexer<'a> {
 
     current_line : usize, // for debug in tokens so 31:x is possible
     current_char_on_line : usize, // for debug in tokens so line:10 is possible
-} impl <'a> Lexer<'a> {
+}
+impl <'a> Lexer<'a> {
     pub fn new(source: &'a str) -> Self {
-        Self { source, current_char: 0, current_line: 0, current_char_on_line: 0 }
+        Self { source, current_char: 0, current_line: 1, current_char_on_line: 1 }
     }
 
     pub fn peek(&mut self) -> Option<char> {
@@ -42,6 +43,32 @@ pub struct Lexer<'a> {
     }
 
     pub fn consume(&mut self) {
-        self.current_char += 1
+        self.current_char += 1;
+    }
+
+    fn parse_str(&mut self) -> String {
+        let mut buffer = String::new();
+
+        buffer
+    }
+    pub fn tokenize(&mut self) -> Vec<Token> {
+        let mut tokens : Vec<Token> = Vec::new();
+
+        while self.peek().is_some() {
+            let base_char = self.peek().unwrap();
+
+            match base_char {
+                '\n'  => {
+                    self.current_line += 1;
+                    println!("line: {}", self.current_line);
+                    },
+                ';' => {  },
+                _ => {}
+            }
+
+            self.consume()
+        }
+
+        tokens
     }
 }

@@ -7,3 +7,5 @@ license = "GPL-3"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+heliox_asm = { path = "../heliox_asm" }
+heliox_lang = { path = "../heliox_lang" }

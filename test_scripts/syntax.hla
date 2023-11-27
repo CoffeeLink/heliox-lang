@@ -1,0 +1,34 @@
+// this is a comment
+
+//instructions start with their name then their args
+MOV 10 r1 // move 10 into r1, lowercase works too
+
+//define constants with the 'const' keyword
+const a_int 123 // a const with name 'a_int' is 123
+
+// constants cannot be redefined
+
+// define jump points with the 'label' keyword
+label main
+    mov a_int R2 // the label points to the address of 'mov a_int R2'
+// tabs/spaces are optional but look nicer
+
+nop; nop; nop; // ';' and newlines are the end of a statement so if needed, this can be done too
+
+//Directives
+//a directive tells info about the code to the compiler
+//directives can be defined with the '.<directive_name>' syntax
+
+//there are a few directives currently but can be added based on targets
+
+//The origin directive
+.origin 8000 // tells the compiler that code should start at 8000
+
+//the entry directive
+.entry main // code will start in label main, origin only offsets code in memory
+
+//the feature directive
+.feature stack // can only compile on targets that have stack functions
+
+//the target directive
+.target <target_name> // can only compile on this target
